@@ -127,23 +127,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Replace with actual Google Apps Script URL for submission
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzWpmTSddWcagT4KdwjYHnoix94VOT0LvXtaPoqqJl3tpWvJPPF3PBpuc4NAblM3OHWAQ/exec';
         
-        // This is a placeholder for the fetch call
-        alert('Chức năng đặt hàng đang được phát triển. Dữ liệu đã được ghi lại ở console.');
-
-        // Example of how the fetch call would look:
-        /*
-        fetch(scriptURL, { method: 'POST', body: JSON.stringify(orderData)})
-            .then(response => {
-                alert('Đặt hàng thành công!');
-                cart = [];
-                renderCart();
-                orderForm.reset();
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                alert('Có lỗi xảy ra, vui lòng thử lại.');
-            });
-        */
+        fetch(scriptURL, { 
+            method: 'POST', 
+            mode: 'no-cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        })
+        .then(response => {
+            alert('Đặt hàng thành công!');
+            cart = [];
+            renderCart();
+            orderForm.reset();
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('Có lỗi xảy ra, vui lòng thử lại.');
+        });
     });
 
     // Initial render
