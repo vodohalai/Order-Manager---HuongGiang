@@ -40,3 +40,31 @@ This application is designed to be deployed on Cloudflare Pages via GitHub.
 4.  Select the `Pages` tab and connect your GitHub account.
 5.  Choose the repository you created.
 6.  Follow the setup instructions to deploy your site.
+
+## Contributing
+
+If you want to contribute to the project, follow these steps to push your changes to the GitHub repository:
+
+1.  **Stage your changes:**
+
+    Use the `git add` command to stage the files you have modified. To stage all changes, run:
+
+    ```bash
+    git add .
+    ```
+
+2.  **Commit your changes:**
+
+    Commit your staged changes with a descriptive message. This helps to track the history of the project.
+
+    ```bash
+    git commit -m "Feat: Describe your new feature or fix"
+    ```
+
+3.  **Push your changes to GitHub:**
+
+    Push your committed changes to the `master` branch (or the relevant branch) on the remote repository.
+
+    ```bash
+    git push
+    ```
