@@ -308,3 +308,68 @@ form h2 {
 .toast.success { background-color: #28a745; }
 .toast.error { background-color: #dc3545; }
 .toast.info { background-color: #17a2b8; }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .product-section,
+    .order-form-section {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-list,
+    .cart-section {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header div {
+        margin-top: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-secondary {
+        width: 100%;
+    }
+}
