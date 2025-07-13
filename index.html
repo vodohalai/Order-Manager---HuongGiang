@@ -25,6 +25,7 @@
                     <button class="btn-primary">Làm mới sản phẩm</button>
                 </div>
                 <div class="product-list">
+                    <div id="product-loader" class="loader"></div>
                     <table>
                         <thead>
                             <tr>
@@ -125,6 +126,21 @@
             </table>
         </div>
     </div>
+    <div id="add-to-cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <img id="modal-product-image" src="" alt="" width="100">
+            <p>Giá: <span id="modal-product-price"></span></p>
+            <label for="modal-quantity">Số lượng:</label>
+            <input type="number" id="modal-quantity" value="1" min="1">
+            <button id="modal-add-to-cart-btn" class="btn-primary">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
