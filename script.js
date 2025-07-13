@@ -18,12 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.querySelector('.close-button');
     const toastContainer = document.getElementById('toast-container');
 
-    // Placeholder product data
-    const products = [
-        { id: 'SP001', name: 'Sản phẩm A', unit: 'Cái', price: 100000, image: 'https://via.placeholder.com/50' },
-        { id: 'SP002', name: 'Sản phẩm B', unit: 'Hộp', price: 250000, image: 'https://via.placeholder.com/50' },
-        { id: 'SP003', name: 'Sản phẩm C', unit: 'Chiếc', price: 50000, image: 'https://via.placeholder.com/50' },
-    ];
+    let products = [];
 
     let cart = [];
 
@@ -46,12 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchProducts() {
         productLoader.style.display = 'block';
         productTableBody.style.display = 'none';
-        // Simulate network request
-        setTimeout(() => {
-            renderProducts();
-            productLoader.style.display = 'none';
-            productTableBody.style.display = '';
-        }, 1500);
+        
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzWpmTSddWcagT4KdwjYHnoix94VOT0LvXtaPoqqJl3tpWvJPPF3PBpuc4NAblM3OHWAQ/exec';
+
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    products = data.data;
+                    renderProducts();
+                } else {
+                    showToast('Không thể tải danh sách sản phẩm.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching products:', error);
+                showToast('Lỗi kết nối, không thể tải sản phẩm.', 'error');
+            })
+            .finally(() => {
+                productLoader.style.display = 'none';
+                productTableBody.style.display = '';
+            });
     }
 
     function renderCart() {
