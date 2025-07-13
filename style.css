@@ -308,8 +308,3 @@ form h2 {
 .toast.success { background-color: #28a745; }
 .toast.error { background-color: #dc3545; }
 .toast.info { background-color: #17a2b8; }
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
