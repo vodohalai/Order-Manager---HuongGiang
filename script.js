@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productLoader.style.display = 'block';
         productTableBody.style.display = 'none';
         
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzWpmTSddWcagT4KdwjYHnoix94VOT0LvXtaPoqqJl3tpWvJPPF3PBpuc4NAblM3OHWAQ/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyfWCVkP74pVmZDGv-osFqLsClUcJPLHI3WereNdRuPGO0ArBCCok9pqTZLsK-02axYhA/exec';
 
         fetch(scriptURL)
             .then(response => response.json())
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log('Submitting order:', orderData);
         // Replace with actual Google Apps Script URL for submission
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzWpmTSddWcagT4KdwjYHnoix94VOT0LvXtaPoqqJl3tpWvJPPF3PBpuc4NAblM3OHWAQ/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyfWCVkP74pVmZDGv-osFqLsClUcJPLHI3WereNdRuPGO0ArBCCok9pqTZLsK-02axYhA/exec';
         
         fetch(scriptURL, { 
             method: 'POST', 
