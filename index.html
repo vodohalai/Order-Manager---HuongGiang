@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng sản phẩm Digital 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p><i class="fas fa-info-circle"></i> Ứng dụng này do một người dùng Google Apps Script tạo</p>
+            <div>
+                <a href="#">Báo cáo sai phạm</a>
+                <a href="#">Tìm hiểu thêm</a>
+                <span>X</span>
+            </div>
+        </div>
+        <h1><i class="fas fa-file-invoice"></i> ĐƠN HÀNG SẢN PHẨM DIGITAL 2025 (Google Sheets)</h1>
+        <div class="main-content">
+            <div class="product-section">
+                <div class="search-bar">
+                    <input type="text" id="product-search" placeholder="Tìm kiếm sản phẩm theo mã hoặc tên">
+                    <button class="btn-primary">Làm mới sản phẩm</button>
+                </div>
+                <div class="product-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã SP</th>
+                                <th>Tên SP</th>
+                                <th>Hình ảnh</th>
+                                <th>ĐVT</th>
+                                <th>Đơn giá (VNĐ)</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-table-body">
+                            <!-- Product rows will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="order-form-section">
+                <form id="order-form">
+                    <h2>FORM ĐẶT HÀNG</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="ho-ten">Họ và tên *</label>
+                            <input type="text" id="ho-ten" name="ho-ten" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="so-dien-thoai">Số điện thoại *</label>
+                            <input type="tel" id="so-dien-thoai" name="so-dien-thoai" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="xa-phuong">Xã/phường *</label>
+                            <input type="text" id="xa-phuong" name="xa-phuong" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quan-huyen">Quận/huyện *</label>
+                            <input type="text" id="quan-huyen" name="quan-huyen" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tinh-tp">Tỉnh/TP *</label>
+                            <input type="text" id="tinh-tp" name="tinh-tp" required>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="dia-chi-chi-tiet">Địa chỉ chi tiết *</label>
+                            <input type="text" id="dia-chi-chi-tiet" name="dia-chi-chi-tiet" required>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="ghi-chu">Ghi chú</label>
+                            <textarea id="ghi-chu" name="ghi-chu" placeholder="Thông tin ghi chú"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng trước VAT:</label>
+                            <input type="text" id="tong-truoc-vat" readonly value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="chiet-khau-pt">Chiết khấu (%)</label>
+                            <input type="number" id="chiet-khau-pt" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Chiết khấu bằng tiền (VNĐ)</label>
+                            <input type="text" id="chiet-khau-vnd" readonly value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="vat">VAT (%)</label>
+                            <input type="number" id="vat" value="0">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Tổng sau VAT:</label>
+                            <input type="text" id="tong-sau-vat" readonly value="0">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Đặt hàng</button>
+                        <button type="button" class="btn-secondary" id="clear-cart">Xoá giỏ hàng</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="cart-section">
+            <h2>Danh sách sản phẩm đặt</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã SP</th>
+                        <th>Tên SP</th>
+                        <th>Hình ảnh</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-table-body">
+                    <!-- Cart items will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
